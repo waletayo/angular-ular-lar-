@@ -1,0 +1,35 @@
+<div>
+
+  <img *ngIf="loading" alt="loading" src="../../../assets/spinner.gif"/>
+  <h4 *ngIf="!loading" class="container  ">List of Talks </h4>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>title</th>
+      <th>content</th>
+      <th>Date</th>
+      <th> speaker</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let talk of talks">
+      <td>{{talk.title}}</td>
+      <td>{{talk.content}}</td>
+      <td>
+        {{talk.date |date }}
+      </td>
+      <td>{{talk.speaker}}</td>
+      <td>
+        <button class="btn btn-danger" (click)="onDelete(talk._id)">
+          Delete
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
