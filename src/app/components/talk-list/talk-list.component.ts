@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AppService} from "../../service/app-service";
 
 @Component({
@@ -18,10 +18,10 @@ export class TalkListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getAttendees();
+    this.getTalk();
   }
 
-  getAttendees() {
+  getTalk() {
     this.loading = true;
     this.appservice.get('/talks').subscribe(res => {
         console.log('response', res);
